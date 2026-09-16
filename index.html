@@ -1,23 +1,47 @@
 <!doctype html>
 <!--
-  Support page, for the Support URL field in App Store Connect (a required
-  field for every submission). Served by GitHub Pages from /docs, so this is
-  the landing page: https://kevinwhite-cpu.github.io/rescue-the-groom/
+  Landing page for the app, and the Support URL registered in App Store
+  Connect (Apple requires it to lead to contact details, so the help and
+  contact sections stay on this page). Served by GitHub Pages:
+  https://kevinwhite-cpu.github.io/rescue-the-groom-site/
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rescue the Groom — Support</title>
+<title>Rescue the Groom</title>
+<meta name="description" content="Rescue the Groom — the wedding trading card game, for our guests. Get it on the App Store.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<meta property="og:title" content="Rescue the Groom">
+<meta property="og:description" content="The wedding trading card game, for our guests.">
+<meta property="og:image" content="https://kevinwhite-cpu.github.io/rescue-the-groom-site/icon.png">
 <style>
   :root { color-scheme: light dark; }
   body {
-    margin: 0 auto; padding: 2.5rem 1.25rem 4rem; max-width: 42rem;
+    margin: 0 auto; padding: 3rem 1.25rem 4rem; max-width: 42rem;
     font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: #241a12; background: #f7f1e4;
   }
-  h1 { font-size: 1.7rem; margin: 0 0 .25rem; }
-  .sub { color: #6f6152; margin: 0 0 2rem; }
+  .hero { text-align: center; }
+  .icon {
+    width: 160px; height: 160px; border-radius: 36px; display: block; margin: 0 auto 1.25rem;
+    box-shadow: 0 12px 32px rgba(36, 26, 18, .28);
+  }
+  h1 { font-size: 2.1rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .sub { color: #6f6152; margin: 0 0 1.75rem; font-size: 1.1rem; }
+  .store {
+    display: inline-block; background: #000; color: #fff; text-decoration: none;
+    padding: .8rem 1.5rem; border-radius: 12px; font-weight: 600; font-size: 1.05rem;
+    line-height: 1.2;
+  }
+  .store small { display: block; font-weight: 400; font-size: .75rem; opacity: .85; }
+  .store:hover { background: #222; }
+  .note { margin: 1.25rem 0 0; color: #6f6152; font-size: .95rem; }
+  .qr { margin: 2.25rem auto 0; width: 176px; }
+  .qr img { width: 176px; height: 176px; display: block; border-radius: 12px; }
+  .qr p { margin: .5rem 0 0; font-size: .85rem; color: #6f6152; text-align: center; }
+  hr { border: 0; border-top: 1px solid rgba(36, 26, 18, .15); margin: 3rem 0 1.5rem; }
   h2 { font-size: 1rem; letter-spacing: .06em; text-transform: uppercase;
        margin: 2rem 0 .5rem; color: #8a6a33; }
   dt { font-weight: 700; margin-top: 1rem; }
@@ -26,23 +50,32 @@
   @media (prefers-color-scheme: dark) {
     body { color: #ede2cd; background: #17100c; }
     h2 { color: #c8963e; }
-    .sub { color: #a8926f; }
+    .sub, .note, .qr p { color: #a8926f; }
     a { color: #e8b95a; }
+    .store { background: #f2e8d5; color: #17100c; }
+    .store:hover { background: #fff; }
+    hr { border-top-color: rgba(237, 226, 205, .15); }
   }
 </style>
 </head>
 <body>
-<h1>Rescue the Groom</h1>
-<p class="sub">A trading card game for our wedding guests.</p>
+<section class="hero">
+  <img class="icon" src="icon.png" alt="Rescue the Groom app icon" width="160" height="160">
+  <h1>Rescue the Groom</h1>
+  <p class="sub">The wedding trading card game — for our guests.</p>
+  <a class="store" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
+    Download on the App Store
+    <small>Free · iPhone</small>
+  </a>
+  <p class="note">It isn't listed on the App Store — this link is the only way in.
+  The game asks for a code on first launch: it's the year of the wedding.</p>
+  <div class="qr">
+    <img src="qr.svg" alt="QR code linking to Rescue the Groom on the App Store" width="176" height="176">
+    <p>Or point your iPhone camera here.</p>
+  </div>
+</section>
 
-<h2>Getting in</h2>
-<dl>
-  <dt>It asks me for a code.</dt>
-  <dd>Enter the year of the wedding. Whoever sent you the link can tell you.</dd>
-
-  <dt>I don't have the link.</dt>
-  <dd>Email <a href="mailto:kgw209@gmail.com">kgw209@gmail.com</a> and we'll send it.</dd>
-</dl>
+<hr>
 
 <h2>Playing</h2>
 <dl>
@@ -56,8 +89,7 @@
   you which.</dd>
 
   <dt>My deck is stuck at the wrong number of cards.</dt>
-  <dd>Use <strong>Reset Game</strong> on the home screen to start a fresh
-  career.</dd>
+  <dd>Use <strong>Reset career</strong> on the home screen to start fresh.</dd>
 </dl>
 
 <h2>Your data</h2>
