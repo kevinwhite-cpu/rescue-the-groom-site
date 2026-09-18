@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  Where an invite link lands: https://kevinwhite-cpu.github.io/rescue-the-groom-site/join?c=CODE&f=Alex
+
+  On a phone with the game installed the link never gets here - iOS opens the
+  game directly (a universal link; the apple-app-site-association file at the
+  root of kevinwhite-cpu.github.io names this path) and the code is accepted
+  without typing. This page is for everyone else: get the app, then tap the
+  link in the text again - or type the code, which is shown as a fallback.
+
+  The wedding's door code is deliberately not on this site.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join a friend — Rescue the Groom</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<script>
+  // Safari's Smart App Banner: "OPEN" when the game is installed (and it is
+  // handed this very link, code and all), "VIEW" to the App Store when not.
+  // Written at parse time so the banner sees it.
+  document.write('<meta name="apple-itunes-app" content="app-id=6809094918, app-argument=' +
+    location.href.replace(/"/g, '') + '">');
+</script>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 3rem 1.25rem 4rem; max-width: 30rem; text-align: center;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #241a12; background: #f7f1e4;
+  }
+  .icon {
+    width: 128px; height: 128px; border-radius: 30px; display: block; margin: 0 auto 1.25rem;
+    box-shadow: 0 12px 32px rgba(36, 26, 18, .28);
+  }
+  h1 { font-size: 1.8rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .sub { color: #6f6152; margin: 0 0 1.75rem; font-size: 1.05rem; }
+  .store {
+    display: inline-block; background: #000; color: #fff; text-decoration: none;
+    padding: .8rem 1.5rem; border-radius: 12px; font-weight: 600; font-size: 1.05rem; line-height: 1.2;
+  }
+  .store small { display: block; font-weight: 400; font-size: .75rem; opacity: .85; }
+  .then { margin: 2.25rem 0 0; color: #6f6152; font-size: .95rem; }
+  .code {
+    display: inline-block; margin: .6rem 0 0; padding: .55rem 1rem; border-radius: 10px;
+    font: 700 1.6rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .25em;
+    background: rgba(36, 26, 18, .08); color: #241a12;
+  }
+  .copy { margin-left: .5rem; font-size: .9rem; color: #8a6a33; background: none; border: 0; cursor: pointer; }
+  .fine { margin: 2.5rem 0 0; font-size: .85rem; color: #6f6152; }
+  a { color: #8a6a33; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #ede2cd; background: #17100c; }
+    .sub, .then, .fine { color: #a8926f; }
+    .store { background: #f2e8d5; color: #17100c; }
+    .code { background: rgba(237, 226, 205, .12); color: #ede2cd; }
+    a, .copy { color: #e8b95a; }
+  }
+</style>
+</head>
+<body>
+  <img class="icon" src="icon.png" alt="">
+  <h1 id="title">You're invited</h1>
+  <p class="sub" id="sub">A friend wants to play you in Rescue the Groom, the wedding trading card game.</p>
+
+  <a class="store" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
+    Get it on the App Store
+    <small>free · iPhone and iPad</small>
+  </a>
+
+  <p class="then" id="then">
+    Once it's installed, come back to the text and tap the link again — the game opens and you're friends.
+  </p>
+  <div id="fallback" hidden>
+    <p class="then">Or, in the game, open <b>Friends</b> and enter this code:</p>
+    <span class="code" id="code"></span><button class="copy" id="copy" type="button">copy</button>
+  </div>
+
+  <p class="fine">Not an iPhone? The game is iOS-only for now.</p>
+
+<script>
+  var q = new URLSearchParams(location.search);
+  var code = (q.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+  var from = (q.get('f') || '').replace(/[<>]/g, '').slice(0, 20);
+  if (from) {
+    document.getElementById('title').textContent = from + ' invited you';
+    document.getElementById('sub').textContent = from + ' wants to play you in Rescue the Groom, the wedding trading card game.';
+  }
+  if (code.length === 6) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('fallback').hidden = false;
+    document.getElementById('copy').onclick = function () {
+      navigator.clipboard && navigator.clipboard.writeText(code).then(function () {
+        document.getElementById('copy').textContent = 'copied';
+      });
+    };
+  }
+</script>
+</body>
+</html>
