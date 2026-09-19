@@ -3,8 +3,8 @@
 The support and privacy pages for the **Rescue the Groom** iOS app, served by
 GitHub Pages:
 
-- Support: <https://kevinwhite-cpu.github.io/rescue-the-groom-site/>
-- Privacy policy: <https://kevinwhite-cpu.github.io/rescue-the-groom-site/privacy-policy.html>
+- Support: <https://rescuethegroom.com/>
+- Privacy policy: <https://rescuethegroom.com/privacy-policy.html>
 
 Both URLs are required fields in App Store Connect.
 

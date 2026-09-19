@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "WUQASJTCJ7.com.kevinwhite.rescuethegroom",
+        "paths": ["/join", "/join?*"],
+        "components": [
+          { "/": "/join", "comment": "Rescue the Groom invite links open the game" },
+          { "/": "/join", "?": { "c": "?*" }, "comment": "with the invite code" }
+        ]
+      }
+    ]
+  }
+}
