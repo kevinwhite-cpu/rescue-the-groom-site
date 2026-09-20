@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kevinwhite.rescuethegroom",
+      "sha256_cert_fingerprints": [
+        "78:BC:38:4E:AF:19:2E:69:D6:04:74:60:09:0F:45:06:7D:34:CC:ED:EE:1D:CD:07:AF:21:EF:DB:57:A2:38:A0"
+      ]
+    }
+  }
+]
