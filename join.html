@@ -44,6 +44,7 @@
     padding: .8rem 1.5rem; border-radius: 12px; font-weight: 600; font-size: 1.05rem; line-height: 1.2;
   }
   .store small { display: block; font-weight: 400; font-size: .75rem; opacity: .85; }
+  .stores { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
   .then { margin: 2.25rem 0 0; color: #6f6152; font-size: .95rem; }
   .open {
     display: inline-block; margin: .75rem 0 0; padding: .7rem 1.4rem; border-radius: 12px;
@@ -65,17 +66,23 @@
   <h1 id="title">You're invited</h1>
   <p class="sub" id="sub">A friend wants to play you in Rescue the Groom, the wedding trading card game.</p>
 
-  <a class="store" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
-    Get it on the App Store
-    <small>free · iPhone and iPad</small>
-  </a>
+  <div class="stores">
+    <a class="store" id="ios" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
+      Get it on the App Store
+      <small>free · iPhone and iPad</small>
+    </a>
+    <a class="store" id="android" href="android/rescue-the-groom.apk" download>
+      Get it for Android
+      <small>free · installs from this site</small>
+    </a>
+  </div>
 
   <p class="then" id="then">
     Once it's installed, tap the link in the text again, or the button below. The game opens and you're friends.
   </p>
   <a class="open" id="open" hidden>Already installed? Open the game</a>
 
-  <p class="fine">Not an iPhone? The game is iOS-only for now.</p>
+  <p class="fine" id="fine">On Android, open the downloaded file and allow the install when your phone asks.</p>
 
 <script>
   var q = new URLSearchParams(location.search);
@@ -85,6 +92,10 @@
     document.getElementById('title').textContent = from + ' invited you';
     document.getElementById('sub').textContent = from + ' wants to play you in Rescue the Groom, the wedding trading card game.';
   }
+  // Show the visitor their own platform's button; on a computer, both.
+  var ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) document.getElementById('ios').hidden = true;
+  else if (/iPhone|iPad|iPod/i.test(ua)) { document.getElementById('android').hidden = true; document.getElementById('fine').hidden = true; }
   if (code.length === 6) {
     var open = document.getElementById('open');
     open.href = 'rescuethegroom://join?c=' + code + (from ? '&f=' + encodeURIComponent(from) : '');

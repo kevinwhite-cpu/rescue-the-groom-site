@@ -36,6 +36,7 @@
     line-height: 1.2;
   }
   .store small { display: block; font-weight: 400; font-size: .75rem; opacity: .85; }
+  .stores { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
   .store:hover { background: #222; }
   .note { margin: 1.25rem 0 0; color: #6f6152; font-size: .95rem; }
   .qr { margin: 2.25rem auto 0; width: 176px; }
@@ -63,12 +64,21 @@
   <img class="icon" src="icon.png" alt="Rescue the Groom app icon" width="160" height="160">
   <h1>Rescue the Groom</h1>
   <p class="sub">The wedding trading card game, for our guests.</p>
-  <a class="store" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
-    Download on the App Store
-    <small>Free · iPhone</small>
-  </a>
-  <p class="note">It isn't listed on the App Store. This link is the only way in.
-  The game asks for a code on first launch: it's the year of the wedding.</p>
+  <div class="stores">
+    <a class="store" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
+      Download on the App Store
+      <small>Free · iPhone and iPad</small>
+    </a>
+    <a class="store" href="android/rescue-the-groom.apk" download>
+      Download for Android
+      <small>Free · installs from this site</small>
+    </a>
+  </div>
+  <p class="note">The game isn't listed in any store search. These links are the only way in.
+  It asks for a code on first launch: it's the year of the wedding.</p>
+  <p class="note"><strong>On Android:</strong> open the downloaded file and your phone will ask
+  once to allow installs from your browser. Say yes, then tap Install. iPhone and Android
+  guests play each other and share one leaderboard.</p>
   <div class="qr">
     <img src="qr.svg" alt="QR code linking to Rescue the Groom on the App Store" width="176" height="176">
     <p>Or point your iPhone camera here.</p>
