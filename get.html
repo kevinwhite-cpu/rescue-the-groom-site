@@ -1,0 +1,23 @@
+<!doctype html>
+<!--
+  Where the QR code on the landing page points: https://rescuethegroom.com/get
+  One code for every phone. An iPhone goes to the App Store; anything else
+  lands on the home page, where an Android phone is shown its own download.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Rescue the Groom</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<script>
+  var ua = navigator.userAgent || '';
+  if (/iPhone|iPad|iPod/i.test(ua)) location.replace('https://apps.apple.com/us/app/rescue-the-groom/id6809094918');
+  else location.replace('./');
+</script>
+</head>
+<body>
+  <p><a href="./">Rescue the Groom</a></p>
+</body>
+</html>

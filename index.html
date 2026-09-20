@@ -37,6 +37,7 @@
   }
   .store small { display: block; font-weight: 400; font-size: .75rem; opacity: .85; }
   .stores { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+  [hidden] { display: none !important; }
   .store:hover { background: #222; }
   .note { margin: 1.25rem 0 0; color: #6f6152; font-size: .95rem; }
   .qr { margin: 2.25rem auto 0; width: 176px; }
@@ -65,23 +66,23 @@
   <h1>Rescue the Groom</h1>
   <p class="sub">The wedding trading card game, for our guests.</p>
   <div class="stores">
-    <a class="store" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
+    <a class="store" id="ios" href="https://apps.apple.com/us/app/rescue-the-groom/id6809094918">
       Download for iPhone
       <small>Free · on the App Store</small>
     </a>
-    <a class="store" href="android/rescue-the-groom.apk" download>
+    <a class="store" id="android" href="android/rescue-the-groom.apk" download>
       Download for Android
       <small>Free · installs from this site</small>
     </a>
   </div>
   <p class="note">The game isn't listed in any store search. These links are the only way in.
   It asks for a code on first launch: it's the year of the wedding.</p>
-  <p class="note"><strong>On Android:</strong> open the downloaded file and your phone will ask
+  <p class="note" id="androidNote"><strong>On Android:</strong> open the downloaded file and your phone will ask
   once to allow installs from your browser. Say yes, then tap Install. iPhone and Android
   guests play each other and share one leaderboard.</p>
-  <div class="qr">
-    <img src="qr.svg" alt="QR code linking to Rescue the Groom on the App Store" width="176" height="176">
-    <p>Or point your iPhone camera here.</p>
+  <div class="qr" id="qr">
+    <img src="qr.svg" alt="QR code that opens the right download for your phone" width="176" height="176">
+    <p>Or point your phone's camera here. One code works for iPhone and Android.</p>
   </div>
 </section>
 
@@ -117,5 +118,14 @@
 
 <h2>Contact</h2>
 <p><a href="mailto:kgw209@gmail.com">kgw209@gmail.com</a></p>
+<script>
+  var ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) { document.getElementById('ios').hidden = true; document.getElementById('qr').hidden = true; }
+  else if (/iPhone|iPad|iPod/i.test(ua)) {
+    document.getElementById('android').hidden = true;
+    document.getElementById('androidNote').hidden = true;
+    document.getElementById('qr').hidden = true;
+  }
+</script>
 </body>
 </html>
