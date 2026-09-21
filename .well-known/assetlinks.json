@@ -5,7 +5,10 @@
       "namespace": "android_app",
       "package_name": "com.kevinwhite.rescuethegroom",
       "sha256_cert_fingerprints": [
-        "78:BC:38:4E:AF:19:2E:69:D6:04:74:60:09:0F:45:06:7D:34:CC:ED:EE:1D:CD:07:AF:21:EF:DB:57:A2:38:A0"
+        "78:BC:38:4E:AF:19:2E:69:D6:04:74:60:09:0F:45:06:7D:34:CC:ED:EE:1D:CD:07:AF:21:EF:DB:57:A2:38:A0",
+        "7B:04:76:68:CB:9D:4C:39:18:C0:50:A5:5C:FB:BA:28:59:72:4F:FE:AE:67:E5:3A:EA:96:17:32:20:4B:6B:77",
+        "5C:15:0D:10:36:9B:F2:EF:E8:72:2C:DD:0A:2B:FA:03:B1:64:36:97:49:48:27:6D:1E:58:F3:DC:FB:37:34:8E",
+        "C4:51:9A:E9:41:DF:18:88:D5:2A:4A:3C:23:BB:AB:C2:0D:4D:24:31:0D:96:8C:98:F5:41:B5:28:7D:FC:76:EF"
       ]
     }
   }
